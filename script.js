@@ -108,17 +108,6 @@ const productos = [
         emoji: "🎮"
     }
   },
-
-    {
-        id: 7,
-        nombre: "soporte para celular para el dia de la madre",
-        precio: 8000,
-        categoria: "soportes",
-        descripcion: "para el dia de la madres no te lo pierdas.",
-        imagen: "imagenes/soporte-feliz dia madre.jpeg",
-        emoji: "📱"
-    },
-
 ];
 
 

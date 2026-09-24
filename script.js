@@ -51,7 +51,7 @@ const productos = [
     {
         id: 1,
         nombre: "Llavero Personalizado",
-        precio: 3500,
+        precio: 3501,
         categoria: "llaveros",
         descripcion: "Llavero personalizado con nombre o diseño.",
         imagen: "imagenes/llavero.jpeg",
@@ -61,7 +61,7 @@ const productos = [
     {
         id: 2,
         nombre: "Soporte para Celular",
-        precio: 75000,
+        precio: 7500,
         categoria: "soportes",
         descripcion: "Soporte práctico para mantener tu celular.",
         imagen: "imagenes/soporte-celular.jpeg",

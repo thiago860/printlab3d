@@ -61,7 +61,7 @@ const productos = [
     {
         id: 2,
         nombre: "Soporte para Celular",
-        precio: 7500,
+        precio: 75000,
         categoria: "soportes",
         descripcion: "Soporte práctico para mantener tu celular.",
         imagen: "imagenes/soporte-celular.jpeg",

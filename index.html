@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PrintLab 3D | Impresión 3D</title>
+
+    <meta
+        name="description"
+        content="PrintLab 3D - Impresión 3D, productos personalizados y diseños únicos."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <div id="intro">
+
+        <div class="intro-contenido">
+
+            <div class="intro-logo">
+                <span>PRINT</span><strong>LAB</strong> <b>3D</b>
+            </div>
+
+            <p>IMPRESIÓN 3D • DISEÑOS • PERSONALIZADOS</p>
+
+            <div class="intro-linea">
+                <div class="intro-carga"></div>
+            </div>
+
+            <span class="intro-texto">Cargando...</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="header-contenido">
+
+            <a href="#inicio" class="logo">
+                <span>PRINT</span><strong>LAB</strong> <b>3D</b>
+            </a>
+
+            <nav>
+
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#personalizados">Personalizados</a>
+                <a href="#opiniones">Opiniones</a>
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+            <div class="acciones-header">
+
+                <button
+                    class="btn-icono"
+                    onclick="mostrarFavoritos()"
+                    title="Favoritos"
+                >
+                    ❤️
+                    <span id="contador-favoritos">0</span>
+                </button>
+
+                <button
+                    class="btn-icono"
+                    onclick="mostrarCarrito()"
+                    title="Carrito"
+                >
+                    🛒
+                    <span id="contador-carrito">0</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-contenido">
+
+                <div class="hero-texto">
+
+                    <span class="etiqueta">
+                        IMPRESIÓN 3D
+                    </span>
+
+                    <h1>
+                        Creamos tus
+                        <span>ideas en 3D.</span>
+                    </h1>
+
+                    <p>
+                        Diseñamos e imprimimos productos personalizados,
+                        accesorios y todo tipo de piezas en 3D.
+                    </p>
+
+                    <div class="hero-botones">
+
+                        <a href="#productos" class="btn-principal">
+                            Ver productos
+                        </a>
+
+                        <a href="#personalizados" class="btn-secundario">
+                            Quiero personalizar
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="cubo-3d">
+                        <span>3D</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BENEFICIOS
+        ========================== -->
+
+        <section class="beneficios">
+
+            <div class="beneficio">
+                <span>⚡</span>
+                <div>
+                    <h3>Fabricación 3D</h3>
+                    <p>Productos fabricados bajo pedido.</p>
+                </div>
+            </div>
+
+            <div class="beneficio">
+                <span>🎨</span>
+                <div>
+                    <h3>Personalización</h3>
+                    <p>Elegí colores, tamaños y diseños.</p>
+                </div>
+            </div>
+
+            <div class="beneficio">
+                <span>💬</span>
+                <div>
+                    <h3>Atención directa</h3>
+                    <p>Consultanos directamente por WhatsApp.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUCTOS
+        ========================== -->
+
+        <section id="productos" class="seccion">
+
+            <div class="titulo-seccion">
+
+                <span>CATÁLOGO</span>
+
+                <h2>
+                    Nuestros productos
+                </h2>
+
+                <p>
+                    Elegí un producto y agregalo a tu carrito.
+                </p>
+
+            </div>
+
+
+            <div class="buscador">
+
+                <input
+                    type="text"
+                    id="buscador-productos"
+                    inputmode="text"
+                    placeholder="🔎 Buscar por nombre, descripción o categoría..."
+                    oninput="buscarProductos()"
+                >
+
+            </div>
+
+
+            <div class="filtros">
+
+                <button
+                    class="filtro activo"
+                    onclick="filtrarProductos('todos', this)"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarProductos('llaveros', this)"
+                >
+                    Llaveros
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarProductos('soportes', this)"
+                >
+                    Soportes
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarProductos('organizacion', this)"
+                >
+                    Organización
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarProductos('decoracion', this)"
+                >
+                    Decoración
+                </button>
+
+            </div>
+
+
+            <div
+                id="productos-grid"
+                class="productos-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =========================
+             OFERTAS
+        ========================== -->
+
+        <section id="ofertas" class="seccion ofertas-seccion">
+
+            <div class="titulo-seccion">
+
+                <span>OFERTAS</span>
+
+                <h2>
+                    Productos en oferta
+                </h2>
+
+                <p>
+                    Aprovechá estos precios especiales.
+                </p>
+
+            </div>
+
+            <div
+                id="ofertas-grid"
+                class="productos-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =========================
+             PERSONALIZADOS
+        ========================== -->
+
+        <section
+            id="personalizados"
+            class="seccion personalizados"
+        >
+
+            <div class="titulo-seccion">
+
+                <span>PERSONALIZADOS</span>
+
+                <h2>
+                    ¿Querés algo personalizado?
+                </h2>
+
+                <p>
+                    Contanos qué necesitás y vemos juntos cómo hacerlo.
+                </p>
+
+            </div>
+
+
+            <div class="personalizados-opciones">
+
+                <div class="personalizado-opcion">
+
+                    <div class="opcion-icono">
+                        🔎
+                    </div>
+
+                    <h3>
+                        Necesito ayuda para encontrar un modelo
+                    </h3>
+
+                    <p>
+                        Contanos qué querés imprimir y te ayudamos
+                        a buscar una opción.
+                    </p>
+
+                    <button
+                        onclick="seleccionarPersonalizado('ayuda')"
+                        class="btn-principal"
+                    >
+                        Elegir
+                    </button>
+
+                </div>
+
+
+                <div class="personalizado-opcion">
+
+                    <div class="opcion-icono">
+                        📁
+                    </div>
+
+                    <h3>
+                        Tengo mi propio modelo 3D
+                    </h3>
+
+                    <p>
+                        Si ya tenés un archivo 3D, podés enviarlo
+                        para consultar la impresión.
+                    </p>
+
+                    <button
+                        onclick="seleccionarPersonalizado('modelo')"
+                        class="btn-principal"
+                    >
+                        Elegir
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="form-personalizado"
+                class="form-personalizado"
+            >
+
+                <h3>
+                    Solicitar impresión personalizada
+                </h3>
+
+
+                <div class="form-grid">
+
+                    <div class="campo">
+
+                        <label for="producto-personalizado">
+                            ¿Qué querés imprimir?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="producto-personalizado"
+                        inputmode="text"
+                            list="lista-productos-personalizados"
+                            placeholder="Ej: soporte para celular"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <datalist id="lista-productos-personalizados"></datalist>
+
+                        <small class="ayuda-campo">
+                            Podés elegir un producto del catálogo o escribir qué querés imprimir.
+                        </small>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="cantidad-personalizada">
+                            Cantidad
+                        </label>
+
+                        <input
+                            type="number"
+                            id="cantidad-personalizada"
+                            min="1"
+                            value="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="color-personalizado">
+                            Color
+                        </label>
+
+                        <input
+                            type="text"
+                            id="color-personalizado"
+                        inputmode="text"
+                            placeholder="Ej: negro"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="tamano-personalizado">
+                            Tamaño aproximado
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tamano-personalizado"
+                            placeholder="Ej: 10 cm"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="detalles-personalizado">
+                        Información adicional
+                    </label>
+
+                    <textarea
+                        id="detalles-personalizado"
+                        inputmode="text"
+                        rows="5"
+                        placeholder="Contanos cualquier detalle que consideres importante..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="archivo-personalizado">
+                        Archivo 3D
+                    </label>
+
+                    <input
+                        type="file"
+                        id="archivo-personalizado"
+                        accept=".stl,.obj,.3mf,.step,.stp"
+                    >
+
+                    <small>
+                        Formatos permitidos: STL, OBJ, 3MF, STEP y STP.
+                    </small>
+
+                </div>
+
+
+                <div class="aviso-licencia">
+
+                    ⚠️ Si el modelo 3D fue descargado de Internet,
+                    verificá que su licencia permita la impresión
+                    comercial antes de solicitar el trabajo.
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-principal btn-formulario"
+                >
+                    Consultar por WhatsApp
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             COMO FUNCIONA
+        ========================== -->
+
+        <section class="seccion">
+
+            <div class="titulo-seccion">
+
+                <span>PROCESO</span>
+
+                <h2>
+                    ¿Cómo funciona?
+                </h2>
+
+            </div>
+
+
+            <div class="pasos">
+
+                <div class="paso">
+
+                    <span>01</span>
+
+                    <h3>
+                        Elegís
+                    </h3>
+
+                    <p>
+                        Seleccioná un producto del catálogo
+                        o contanos qué querés fabricar.
+                    </p>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>02</span>
+
+                    <h3>
+                        Consultás
+                    </h3>
+
+                    <p>
+                        Nos comunicamos por WhatsApp
+                        para definir todos los detalles.
+                    </p>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>03</span>
+
+                    <h3>
+                        Fabricamos
+                    </h3>
+
+                    <p>
+                        Preparamos tu pieza mediante
+                        impresión 3D.
+                    </p>
+
+                </div>
+
+
+                <div class="paso">
+
+                    <span>04</span>
+
+                    <h3>
+                        Listo
+                    </h3>
+
+                    <p>
+                        Coordinamos la entrega o retiro
+                        de tu pedido.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OPINIONES
+        ========================== -->
+
+        <section
+            id="opiniones"
+            class="seccion opiniones"
+        >
+
+            <div class="titulo-seccion">
+
+                <span>OPINIONES</span>
+
+                <h2>
+                    Lo que dicen nuestros clientes
+                </h2>
+
+            </div>
+
+
+            <div
+                id="opiniones-grid"
+                class="opiniones-grid"
+            ></div>
+
+
+            <form
+                id="form-opinion"
+                class="form-opinion"
+            >
+
+                <h3>
+                    Dejá tu opinión
+                </h3>
+
+
+                <div class="form-grid">
+
+                    <div class="campo">
+
+                        <label for="nombre-opinion">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre-opinion"
+                            placeholder="Tu nombre"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="estrellas-opinion">
+                            Estrellas
+                        </label>
+
+                        <select
+                            id="estrellas-opinion"
+                            required
+                        >
+
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="1">⭐</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="texto-opinion">
+                        Opinión
+                    </label>
+
+                    <textarea
+                        id="texto-opinion"
+                        rows="4"
+                        placeholder="Contanos tu experiencia..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-principal"
+                >
+                    Publicar opinión
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
+
+        <section
+            id="contacto"
+            class="seccion contacto"
+        >
+
+            <div class="titulo-seccion">
+
+                <span>CONTACTO</span>
+
+                <h2>
+                    ¿Tenés alguna consulta?
+                </h2>
+
+                <p>
+                    Estamos para ayudarte.
+                </p>
+
+            </div>
+
+
+            <div class="contacto-grid">
+
+                <a
+                    href="https://wa.me/5492224483330"
+                    target="_blank"
+                    class="contacto-card"
+                >
+
+                    <span>💬</span>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        Consultanos directamente.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/1_PRINTLAB3D/"
+                    target="_blank"
+                    class="contacto-card"
+                >
+
+                    <span>📸</span>
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p>
+                        @1_PRINTLAB3D
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="mailto:printlab3d@gmail.com"
+                    class="contacto-card"
+                >
+
+                    <span>✉️</span>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        printlab3d@gmail.com
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL PRODUCTO
+    ========================== -->
+
+    <div
+        id="modal-producto"
+        class="modal"
+    >
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar-modal"
+                onclick="cerrarModal('modal-producto')"
+            >
+                ×
+            </button>
+
+            <div id="detalle-producto"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL FAVORITOS
+    ========================== -->
+
+    <div
+        id="modal-favoritos"
+        class="modal"
+    >
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar-modal"
+                onclick="cerrarModal('modal-favoritos')"
+            >
+                ×
+            </button>
+
+            <h2>
+                ❤️ Mis favoritos
+            </h2>
+
+            <div id="lista-favoritos"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL CARRITO
+    ========================== -->
+
+    <div
+        id="modal-carrito"
+        class="modal"
+    >
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar-modal"
+                onclick="cerrarModal('modal-carrito')"
+            >
+                ×
+            </button>
+
+            <h2>
+                🛒 Mi carrito
+            </h2>
+
+            <div id="lista-carrito"></div>
+
+            <div
+                id="total-carrito"
+                class="total-carrito"
+            ></div>
+
+            
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="logo">
+                <span>PRINT</span><strong>LAB</strong> <b>3D</b>
+            </div>
+
+            <p>
+                Impresión 3D • Diseños • Personalizados
+            </p>
+
+            <p class="copyright">
+                © 2026 PrintLab 3D. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

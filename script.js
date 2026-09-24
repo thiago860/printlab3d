@@ -50,8 +50,8 @@ const productos = [
 
     {
         id: 1,
-        nombre: "Llavero Personalizado",
-        precio: 3501,
+        nombre: "Llavero dexter",
+        precio: 1000,
         categoria: "llaveros",
         descripcion: "Llavero personalizado con nombre o diseño.",
         imagen: "imagenes/llavero.jpeg",
@@ -61,7 +61,7 @@ const productos = [
     {
         id: 2,
         nombre: "Soporte para Celular",
-        precio: 7500,
+        precio: 10000,
         categoria: "soportes",
         descripcion: "Soporte práctico para mantener tu celular.",
         imagen: "imagenes/soporte-celular.jpeg",
@@ -71,7 +71,7 @@ const productos = [
     {
         id: 3,
         nombre: "Organizador de Escritorio",
-        precio: 9500,
+        precio: 20000,
         categoria: "organizacion",
         descripcion: "Organizador para lápices, herramientas y accesorios.",
         imagen: "imagenes/organizador.png",
@@ -91,7 +91,7 @@ const productos = [
     {
         id: 5,
         nombre: "Nombres personalizados",
-        precio: 6500,
+        precio: 4000,
         categoria: "decoracion",
         descripcion: "Nombre personalizado impreso en 3D.",
         imagen: "imagenes/nombres-personalizados.jpeg",

@@ -115,6 +115,15 @@ const productos = [
     descripcion: "Soporte para el dia de las madres.",
     imagen: "imagenes/feliz-dia-madre.jpeg",
     emoji: "📱"
+},
+   {
+    id: 7,
+    nombre: "figuras-pokemon",
+    precio: 8000,
+    categoria: "decoracion",
+    descripcion: "figuras pokemon.",
+    imagen: "imagenes/figuraa-pokemon.jpeg",
+    emoji: "🔤"
 }
 ];
 /* =========================================================

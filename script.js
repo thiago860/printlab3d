@@ -107,18 +107,13 @@ const productos = [
         imagen: "imagenes/soporte-joystick.jpeg",
         emoji: "🎮"
     }
-  },
+
 ];
 
 
 /* =========================================================
    VARIABLES
 ========================================================= */
-
-/*
-   Se aceptan las dos versiones de nombres de LocalStorage
-   para no perder los datos anteriores.
-*/
 
 let carrito = JSON.parse(
     localStorage.getItem("printlab_carrito") ||
@@ -370,11 +365,6 @@ function guardarFavoritos() {
         JSON.stringify(favoritos);
 
 
-    /*
-       Guardamos con ambos nombres para que sea
-       compatible con las dos versiones del proyecto.
-    */
-
     localStorage.setItem(
         "printlab_favoritos",
         datos
@@ -424,12 +414,6 @@ function mostrarFavoritos() {
         document.getElementById("modal-favoritos");
 
 
-    /*
-       Compatible con los dos nombres posibles:
-       contenido-favoritos
-       lista-favoritos
-    */
-
     const contenido =
         document.getElementById("contenido-favoritos") ||
         document.getElementById("lista-favoritos");
@@ -448,13 +432,7 @@ function mostrarFavoritos() {
 
         contenido.innerHTML = `
             <div class="favoritos-vacio">
-
-                <h3>❤️ No tenés favoritos</h3>
-
-                <p>
-                    Agregá productos usando el corazón.
-                </p>
-
+                <p>❤️ Todavía no tenés productos favoritos.</p>
             </div>
         `;
 
@@ -492,7 +470,7 @@ function mostrarFavoritos() {
                             class="btn-principal"
                             onclick="agregarCarrito(${producto.id})"
                         >
-                            🛒
+                            🛒 Agregar
                         </button>
 
                         <button
@@ -526,11 +504,6 @@ function guardarCarrito() {
         JSON.stringify(carrito);
 
 
-    /*
-       Guardamos con los dos nombres para mantener
-       compatibilidad con ambas versiones.
-    */
-
     localStorage.setItem(
         "printlab_carrito",
         datos
@@ -543,6 +516,10 @@ function guardarCarrito() {
 
 }
 
+
+/* =========================================================
+   AGREGAR AL CARRITO
+========================================================= */
 
 function agregarCarrito(id) {
 
@@ -572,8 +549,9 @@ function agregarCarrito(id) {
             id: producto.id,
             nombre: producto.nombre,
             precio: producto.precio,
-            cantidad: 1,
-            emoji: producto.emoji
+            imagen: producto.imagen,
+            emoji: producto.emoji,
+            cantidad: 1
 
         });
 
@@ -599,13 +577,6 @@ function mostrarCarrito() {
         document.getElementById("modal-carrito");
 
 
-    /*
-       Compatible con:
-
-       contenido-carrito
-       lista-carrito
-    */
-
     const contenido =
         document.getElementById("contenido-carrito") ||
         document.getElementById("lista-carrito");
@@ -617,17 +588,9 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
 
         contenido.innerHTML = `
-
             <div class="carrito-vacio">
-
-                <h3>🛒 Tu carrito está vacío</h3>
-
-                <p>
-                    Agregá productos para comenzar.
-                </p>
-
+                <p>🛒 Tu carrito está vacío.</p>
             </div>
-
         `;
 
         modal.classList.add("visible");
@@ -642,39 +605,8 @@ function mostrarCarrito() {
     contenido.innerHTML =
         carrito.map(item => {
 
-            /*
-               Si un producto viene de una versión anterior
-               y no tiene nombre/precio/emoji guardados,
-               los recuperamos desde productos.
-            */
-
-            const producto =
-                productos.find(
-                    p => p.id === item.id
-                );
-
-
-            const nombre =
-                item.nombre ||
-                (producto ? producto.nombre : "Producto");
-
-
-            const precio =
-                item.precio ||
-                (producto ? producto.precio : 0);
-
-
-            const emoji =
-                item.emoji ||
-                (producto ? producto.emoji : "🖨️");
-
-
-            const cantidad =
-                Number(item.cantidad) || 1;
-
-
             const subtotal =
-                precio * cantidad;
+                item.precio * item.cantidad;
 
 
             total += subtotal;
@@ -687,12 +619,12 @@ function mostrarCarrito() {
                     <div>
 
                         <h3>
-                            ${emoji}
-                            ${nombre}
+                            ${item.emoji || "📦"}
+                            ${item.nombre}
                         </h3>
 
                         <p>
-                            $${precio.toLocaleString("es-AR")}
+                            $${item.precio.toLocaleString("es-AR")}
                         </p>
 
                     </div>
@@ -707,7 +639,7 @@ function mostrarCarrito() {
                         </button>
 
                         <span>
-                            ${cantidad}
+                            ${item.cantidad}
                         </span>
 
                         <button
@@ -745,9 +677,9 @@ function mostrarCarrito() {
 
         <button
             class="btn-principal btn-formulario"
-            onclick="realizarPedido()"
+            onclick="enviarPedidoWhatsApp()"
         >
-            📲 Realizar pedido por WhatsApp
+            📲 Pedir por WhatsApp
         </button>
 
     `;
@@ -773,8 +705,7 @@ function cambiarCantidad(id, cambio) {
     if (!item) return;
 
 
-    item.cantidad =
-        Number(item.cantidad) + cambio;
+    item.cantidad += cambio;
 
 
     if (item.cantidad <= 0) {
@@ -818,94 +749,23 @@ function eliminarDelCarrito(id) {
 
 
 /* =========================================================
-   REALIZAR PEDIDO
-========================================================= */
-
-function realizarPedido() {
-
-    if (carrito.length === 0) return;
-
-
-    let mensaje =
-        "Hola! Quiero realizar un pedido:\n\n";
-
-
-    let total = 0;
-
-
-    carrito.forEach(item => {
-
-        const producto =
-            productos.find(
-                producto => producto.id === item.id
-            );
-
-
-        const nombre =
-            item.nombre ||
-            (producto ? producto.nombre : "Producto");
-
-
-        const precio =
-            item.precio ||
-            (producto ? producto.precio : 0);
-
-
-        const cantidad =
-            Number(item.cantidad) || 1;
-
-
-        const subtotal =
-            precio * cantidad;
-
-
-        total += subtotal;
-
-
-        mensaje +=
-            `• ${nombre} x${cantidad} - $${subtotal.toLocaleString("es-AR")}\n`;
-
-    });
-
-
-    mensaje +=
-        `\nTotal aproximado: $${total.toLocaleString("es-AR")}`;
-
-
-    const url =
-        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-/* =========================================================
    CONTADORES
 ========================================================= */
 
 function actualizarContadores() {
 
     const contadorCarrito =
-        document.getElementById(
-            "contador-carrito"
-        );
+        document.getElementById("contador-carrito");
 
 
     const contadorFavoritos =
-        document.getElementById(
-            "contador-favoritos"
-        );
+        document.getElementById("contador-favoritos");
 
 
     const cantidadCarrito =
         carrito.reduce(
             (total, item) =>
-                total + (Number(item.cantidad) || 0),
+                total + item.cantidad,
             0
         );
 
@@ -929,6 +789,62 @@ function actualizarContadores() {
 
 
 /* =========================================================
+   PEDIDO POR WHATSAPP
+========================================================= */
+
+function enviarPedidoWhatsApp() {
+
+    if (carrito.length === 0) return;
+
+
+    let mensaje =
+        "Hola! Quiero hacer un pedido de PrintLab 3D.%0A%0A";
+
+
+    let total = 0;
+
+
+    carrito.forEach(item => {
+
+        const subtotal =
+            item.precio * item.cantidad;
+
+
+        total += subtotal;
+
+
+        mensaje +=
+            `• ${item.nombre} x${item.cantidad} - $${subtotal.toLocaleString("es-AR")}%0A`;
+
+    });
+
+
+    mensaje +=
+        `%0A💰 Total aproximado: $${total.toLocaleString("es-AR")}`;
+
+
+    const url =
+        `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    carrito = [];
+
+    guardarCarrito();
+
+    actualizarContadores();
+
+    cerrarModal("modal-carrito");
+
+}
+
+
+/* =========================================================
    VER PRODUCTO
 ========================================================= */
 
@@ -947,8 +863,14 @@ function verProducto(id) {
         document.getElementById("modal-producto");
 
 
+    /*
+       El HTML utiliza "detalle-producto".
+       Antes el script buscaba "contenido-producto",
+       por eso el botón "Ver" no funcionaba.
+    */
+
     const contenido =
-        document.getElementById("contenido-producto");
+        document.getElementById("detalle-producto");
 
 
     if (!modal || !contenido) return;

@@ -113,7 +113,7 @@ const productos = [
     precio: 8000,
     categoria: "soportes",
     descripcion: "Soporte para el dia de las madres.",
-    imagen: "imagenes/feliz dia madre.jpeg",
+    imagen: "imagenes/feliz-dia-madre.jpeg",
     emoji: "📱"
 }
 ];

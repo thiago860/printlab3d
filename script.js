@@ -106,7 +106,79 @@ const productos = [
         descripcion: "Soporte para guardar tu joystick.",
         imagen: "imagenes/soporte-joystick.jpeg",
         emoji: "🎮"
+    },
+const productos = [
+
+    {
+        id: 1,
+        nombre: "Llavero dexter",
+        precio: 1000,
+        categoria: "llaveros",
+        descripcion: "Llavero personalizado con nombre o diseño.",
+        imagen: "imagenes/llavero.jpeg",
+        emoji: "🔑"
+    },
+
+    {
+        id: 2,
+        nombre: "Soporte para Celular",
+        precio: 10000,
+        categoria: "soportes",
+        descripcion: "Soporte práctico para mantener tu celular.",
+        imagen: "imagenes/soporte-celular.jpeg",
+        emoji: "📱"
+    },
+
+    {
+        id: 3,
+        nombre: "Organizador de Escritorio",
+        precio: 20000,
+        categoria: "organizacion",
+        descripcion: "Organizador para lápices, herramientas y accesorios.",
+        imagen: "imagenes/organizador.png",
+        emoji: "🗂️"
+    },
+
+    {
+        id: 4,
+        nombre: "Maceta Geométrica",
+        precio: 8000,
+        categoria: "decoracion",
+        descripcion: "Maceta con diseño geométrico moderno.",
+        imagen: "imagenes/maceta-geometrica.jpeg",
+        emoji: "🪴"
+    },
+
+    {
+        id: 5,
+        nombre: "Nombres personalizados",
+        precio: 4000,
+        categoria: "decoracion",
+        descripcion: "Nombre personalizado impreso en 3D.",
+        imagen: "imagenes/nombres-personalizados.jpeg",
+        emoji: "🔤"
+    },
+
+    {
+        id: 6,
+        nombre: "Soporte para Joystick",
+        precio: 10000,
+        categoria: "soportes",
+        descripcion: "Soporte para guardar tu joystick.",
+        imagen: "imagenes/soporte-joystick.jpeg",
+        emoji: "🎮"
     }
+{
+    id: 7,
+    nombre: "Soporte para el dia de la madre",
+    precio: 8000,
+    categoria: "soportes",
+    descripcion: "Soporte para el dia de las madres.",
+    imagen: "imagenes/feliz dia madre.jpeg",
+    emoji: "📱"
+}
+];
+
 
 ];
 

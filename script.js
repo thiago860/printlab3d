@@ -167,7 +167,7 @@ const productos = [
         descripcion: "Soporte para guardar tu joystick.",
         imagen: "imagenes/soporte-joystick.jpeg",
         emoji: "🎮"
-    }
+    },
 {
     id: 7,
     nombre: "Soporte para el dia de la madre",

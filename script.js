@@ -117,7 +117,7 @@ const productos = [
     emoji: "📱"
 },
    {
-    id: 7,
+    id: 8,
     nombre: "figuras-pokemon",
     precio: 8000,
     categoria: "decoracion",

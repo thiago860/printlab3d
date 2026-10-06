@@ -126,7 +126,7 @@ const productos = [
     emoji: "🔤"
 },
  {
-    id: 7,
+    id: 9,
     nombre: "Porta-sahumerio",
     precio: 15000,
     categoria: "decoracion",

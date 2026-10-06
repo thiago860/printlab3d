@@ -125,7 +125,7 @@ const productos = [
     imagen: "imagenes/figuraa-pokemon.jpeg",
     emoji: "🔤"
 },
- {
+ {
     id: 7,
     nombre: "Porta-sahumerio",
     precio: 15000,
@@ -134,7 +134,8 @@ const productos = [
     imagen: "imagenes/Porta-sahumerio.jpeg",
     emoji: "🔤"
 }
-];
+];
+
 /* =========================================================
    VARIABLES
 ========================================================= */

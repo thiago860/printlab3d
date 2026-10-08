@@ -122,7 +122,7 @@ const productos = [
     precio: 8000,
     categoria: "decoracion",
     descripcion: "figuras pokemon.",
-    imagen: "figuraa-pokemon.jpeg",
+    imagen:"figura-pokemon.jpeg",
     emoji: "🔤"
     },
     {
@@ -131,7 +131,7 @@ const productos = [
     precio: 15000,
     categoria: "decoracion",
     descripcion: "para la casa.",
-    imagen: "Porta-sahumerio.jpeg",
+    imagen:"Porta-sahumerio.jpeg",
     emoji: "🔤"
     }
 ];

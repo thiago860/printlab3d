@@ -133,7 +133,7 @@ const productos = [
     descripcion: "para la casa.",
     imagen:"iamgenes-2/porta-sahumerio.jpeg",
     emoji: "🔤"
-    }
+    },
 ];
 
 /* =========================================================

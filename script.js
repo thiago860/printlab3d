@@ -131,7 +131,7 @@ const productos = [
     precio: 15000,
     categoria: "decoracion",
     descripcion: "para la casa.",
-    imagen:"iamgenes-2/porta-sahmerio.jpeg",
+    imagen:"iamgenes-2/porta-sahumerio.jpeg",
     emoji: "🔤"
     }
 ];

@@ -122,7 +122,7 @@ const productos = [
     precio: 8000,
     categoria: "decoracion",
     descripcion: "figuras pokemon.",
-    imagen:"imagenes-2/figura-pokemon.jpeg",
+    imagen:"imagenes-2/imagenes-2/WhatsApp Image 2026-10-08 at 11.46.55 AM (2).jpeg.jpeg",
     emoji: "🔤"
     },
     {

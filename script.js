@@ -107,7 +107,7 @@ const productos = [
         imagen: "imagenes/soporte-joystick.jpeg",
         emoji: "🎮"
     },
-   {
+    {
     id: 7,
     nombre: "Soporte para el dia de la madre",
     precio: 8000,
@@ -115,8 +115,8 @@ const productos = [
     descripcion: "Soporte para el dia de las madres.",
     imagen: "imagenes/feliz-dia-madre.jpeg",
     emoji: "📱"
-},
-   {
+    },
+    {
     id: 8,
     nombre: "figuras-pokemon",
     precio: 8000,
@@ -124,8 +124,8 @@ const productos = [
     descripcion: "figuras pokemon.",
     imagen: "figuraa-pokemon.jpeg",
     emoji: "🔤"
-},
- {
+    },
+    {
     id: 9,
     nombre: "Porta-sahumerio",
     precio: 15000,
@@ -133,7 +133,7 @@ const productos = [
     descripcion: "para la casa.",
     imagen: "Porta-sahumerio.jpeg",
     emoji: "🔤"
-}
+    }
 ];
 
 /* =========================================================

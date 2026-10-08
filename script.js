@@ -118,7 +118,7 @@ const productos = [
     },
     {
     id: 8,
-    nombre: "figuras-pokemon",
+    nombre: "figuras pokemon",
     precio: 8000,
     categoria: "decoracion",
     descripcion: "figuras pokemon.",
@@ -127,7 +127,7 @@ const productos = [
     },
     {
     id: 9,
-    nombre: "Porta-sahumerio",
+    nombre: "Porta sahumerio",
     precio: 15000,
     categoria: "decoracion",
     descripcion: "para la casa.",

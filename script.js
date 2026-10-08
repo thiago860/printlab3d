@@ -119,7 +119,7 @@ const productos = [
     {
     id: 8,
     nombre: "figuras pokemon",
-    precio: 8000,
+    precio: 10000,
     categoria: "decoracion",
     descripcion: "figuras pokemon.",
     imagen:"imagenes-2/figuras-pokemon.jpeg",
@@ -131,7 +131,7 @@ const productos = [
     precio: 15000,
     categoria: "decoracion",
     descripcion: "para la casa.",
-    imagen:"iamgenes-2/porta-sahumerio.jpeg",
+    imagen:"iamgenes-2/porta-sahmerio.jpeg",
     emoji: "🔤"
     },
 ];

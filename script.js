@@ -264,6 +264,7 @@ const productos = [
         nombre: "Soporte para el dia de la madre",
         precio: 8000,
         ofertas:true,
+        precio: 8000,               
         categoria: "soportes",
         descripcion: "Soporte para el dia de las madres.",
         imagen: "imagenes/feliz-dia-madre.jpeg",

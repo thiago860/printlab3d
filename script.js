@@ -271,7 +271,9 @@ const productos = [
     {
         id: 8,
         nombre: "Figuras pokemon",
-        precio: 10000,
+        precio: 15000,
+        precioAnterior: 10000,   // ← agregá esta línea: el precio de antes
+        oferta: true,
         categoria: "decoracion",
         descripcion: "Figuras pokemon.",
         imagen: "imagenes-2/figuras-pokemon.jpeg",

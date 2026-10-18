@@ -276,15 +276,6 @@ const productos = [
         descripcion: "Figuras pokemon.",
         imagen: "imagenes-2/figuras-pokemon.jpeg",
         emoji: "🔤"
-    },
-    {
-        id: 9,
-        nombre: "Porta sahumerio",
-        precio: 15000,
-        categoria: "decoracion",
-        descripcion: "Para la casa.",
-        imagen: "imagenes-2/porta-sahumerio.jpeg",
-        emoji: "🔤"
     }
 ];
 

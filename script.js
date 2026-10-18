@@ -263,6 +263,7 @@ const productos = [
         id: 7,
         nombre: "Soporte para el dia de la madre",
         precio: 8000,
+        pfertas:true,
         categoria: "soportes",
         descripcion: "Soporte para el dia de las madres.",
         imagen: "imagenes/feliz-dia-madre.jpeg",
@@ -272,8 +273,6 @@ const productos = [
         id: 8,
         nombre: "Figuras pokemon",
         precio: 15000,            // ← cambiá este por el precio nuevo (rebajado)
-        precioAnterior: 10000,   // ← agregá esta línea: el precio de antes
-        oferta: true, 
         categoria: "decoracion",
         descripcion: "Figuras pokemon.",
         imagen: "imagenes-2/figuras-pokemon.jpeg",
